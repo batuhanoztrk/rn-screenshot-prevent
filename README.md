@@ -50,7 +50,7 @@
 
 // sample code
 
-import RNScreenshotPrevent, { addListener } from 'rn-screenshot-prevent';
+import RNScreenshotPrevent from 'rn-screenshot-prevent';
 
 /* (IOS, Android) for android might be the only step to get secureView
  * on IOS enables blurry view when app goes into inactive state

@@ -7,6 +7,6 @@ abstract class ScreenshotPreventSpec internal constructor(context: ReactApplicat
   ReactContextBaseJavaModule(context) {
 
   abstract fun enabled(enabled: Boolean)
-  abstract fun enableSecureView(imagePath: String)
+  abstract fun enableSecureView(imagePath: String?)
   abstract fun disableSecureView()
 }
