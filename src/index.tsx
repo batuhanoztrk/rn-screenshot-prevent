@@ -39,7 +39,8 @@ if (Platform.OS !== 'web') {
       ScreenshotPrevent.enableSecureView(imagePath);
     },
   };
-  const eventEmitter = new NativeEventEmitter(RNScreenshotPrevent);
+  const eventEmitter =
+    Platform.OS === 'ios' ? new NativeEventEmitter(RNScreenshotPrevent) : null;
 
   /**
    * subscribes to userDidTakeScreenshot event
@@ -47,20 +48,31 @@ if (Platform.OS !== 'web') {
    * @param fn
    */
   addListen = (fn: FN): Return => {
-    if (typeof fn !== 'function') {
-      console.error(
-        'RNScreenshotPrevent: addListener requires valid callback function'
-      );
+    if (Platform.OS === 'ios') {
+      if (typeof fn !== 'function') {
+        console.error(
+          'RNScreenshotPrevent: addListener requires valid callback function'
+        );
+        return {
+          remove: (): void => {
+            console.error(
+              'RNScreenshotPrevent: remove not work because addListener requires valid callback function'
+            );
+          },
+        };
+      }
+
+      return eventEmitter!.addListener('userDidTakeScreenshot', fn);
+    } else {
+      console.warn('RNScreenshotPrevent: addListener not work in android');
       return {
         remove: (): void => {
-          console.error(
-            'RNScreenshotPrevent: remove not work because addListener requires valid callback function'
+          console.warn(
+            'RNScreenshotPrevent: remove addListener not work in android'
           );
         },
       };
     }
-
-    return eventEmitter.addListener('userDidTakeScreenshot', fn);
   };
 } else {
   RNScreenshotPrevent = {
