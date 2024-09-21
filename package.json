@@ -1,6 +1,6 @@
 {
   "name": "react-native-screenshot-prevent",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "A React Native package to block screenshots and screen recordings, providing protection for sensitive app content. Supports both Android and iOS platforms.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

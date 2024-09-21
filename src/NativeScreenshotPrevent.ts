@@ -2,7 +2,10 @@ import type { TurboModule } from 'react-native';
 import { TurboModuleRegistry } from 'react-native';
 
 export interface Spec extends TurboModule {
-  multiply(a: number, b: number): Promise<number>;
+  enabled(value: boolean): void;
+  enableSecureView(imagePath?: string): void;
+  disableSecureView(): void;
+  addListener(fn: Function): void;
 }
 
 export default TurboModuleRegistry.getEnforcing<Spec>('ScreenshotPrevent');
