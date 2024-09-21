@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text, Platform } from 'react-native';
-import RNScreenshotPrevent from 'react-native-screenshot-prevent';
+import RNScreenshotPrevent from 'rn-screenshot-prevent';
 
 RNScreenshotPrevent.enabled(true);
 

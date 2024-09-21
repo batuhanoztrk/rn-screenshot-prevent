@@ -1,5 +1,5 @@
 {
-  "name": "react-native-screenshot-prevent",
+  "name": "rn-screenshot-prevent",
   "version": "0.0.1",
   "description": "A React Native package to block screenshots and screen recordings, providing protection for sensitive app content. Supports both Android and iOS platforms.",
   "main": "lib/commonjs/index",
@@ -26,7 +26,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-screenshot-prevent-example",
+    "example": "yarn workspace rn-screenshot-prevent-example",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
@@ -41,14 +41,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/batuhanoztrk/react-native-screenshot-prevent.git"
+    "url": "git+https://github.com/batuhanoztrk/rn-screenshot-prevent.git"
   },
   "author": "Batuhan Öztürk <batuhanoztrk@hotmail.com> (https://github.com/batuhanoztrk)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/batuhanoztrk/react-native-screenshot-prevent/issues"
+    "url": "https://github.com/batuhanoztrk/rn-screenshot-prevent/issues"
   },
-  "homepage": "https://github.com/batuhanoztrk/react-native-screenshot-prevent#readme",
+  "homepage": "https://github.com/batuhanoztrk/rn-screenshot-prevent#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

@@ -1,4 +1,4 @@
-# react-native-screenshot-prevent
+# rn-screenshot-prevent
 
 ### This fork contains fully working blank screenshot on IOS13+ including screen recording
 ### This fork contains fully working image screenshot cover on IOS13+ including screen recording
@@ -10,13 +10,13 @@
 
 ## Getting started
 
-`$ npm install react-native-screenshot-prevent --save`
+`$ npm install rn-screenshot-prevent --save`
 
 ### Mostly automatic installation
 
 ### React-Native version 0.59.X and higher: on IOS you might use only `pod install` in your ios folder
 
-`$ react-native link react-native-screenshot-prevent`
+`$ react-native link rn-screenshot-prevent`
 
 ### Manual installation
 
@@ -24,7 +24,7 @@
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-screenshot-prevent` and add `RNScreenshotPrevent.xcodeproj`
+2. Go to `node_modules` ➜ `rn-screenshot-prevent` and add `RNScreenshotPrevent.xcodeproj`
 3. In XCode, in the project navigator, select your project. Add `libRNScreenshotPrevent.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
@@ -35,12 +35,12 @@
 - Add `new RNScreenshotPreventPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
    ```
-   include ':react-native-screenshot-prevent'
-   project(':react-native-screenshot-prevent').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-screenshot-prevent/android')
+   include ':rn-screenshot-prevent'
+   project(':rn-screenshot-prevent').projectDir = new File(rootProject.projectDir, 	'../node_modules/rn-screenshot-prevent/android')
    ```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
    ```
-      implementation project(':react-native-screenshot-prevent')
+      implementation project(':rn-screenshot-prevent')
    ```
 
 
@@ -50,7 +50,7 @@
 
 // sample code
 
-import RNScreenshotPrevent, { addListener } from 'react-native-screenshot-prevent';
+import RNScreenshotPrevent, { addListener } from 'rn-screenshot-prevent';
 
 /* (IOS, Android) for android might be the only step to get secureView
  * on IOS enables blurry view when app goes into inactive state

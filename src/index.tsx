@@ -2,7 +2,7 @@ import { NativeEventEmitter, NativeModules, Platform } from 'react-native';
 import { useEffect } from 'react';
 
 const LINKING_ERROR =
-  `The package 'react-native-screenshot-prevent' doesn't seem to be linked. Make sure: \n\n` +
+  `The package 'rn-screenshot-prevent' doesn't seem to be linked. Make sure: \n\n` +
   Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
