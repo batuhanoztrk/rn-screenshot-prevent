@@ -86,7 +86,7 @@ class ScreenshotPreventModule internal constructor(context: ReactApplicationCont
   }
 
   @ReactMethod
-  override fun enableSecureView(imagePath: String) {
+  override fun enableSecureView(imagePath: String?) {
     currentActivity?.let {
       if (overlayLayout == null) {
         createOverlayLayout(it, imagePath)
@@ -116,7 +116,7 @@ class ScreenshotPreventModule internal constructor(context: ReactApplicationCont
     }
   }
 
-  private fun createOverlayLayout(activity: Activity, imagePath: String) {
+  private fun createOverlayLayout(activity: Activity, imagePath: String?) {
     overlayLayout = RelativeLayout(activity).apply {
       setBackgroundColor(Color.parseColor("#FFFFFF"))
 
@@ -128,7 +128,7 @@ class ScreenshotPreventModule internal constructor(context: ReactApplicationCont
       imageParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE)
       imageView.layoutParams = imageParams
 
-      val bitmap = decodeImageUri(imagePath)
+      val bitmap = imagePath?.let { decodeImageUri(it) }
 
       if (bitmap != null) {
         val imageHeight =
