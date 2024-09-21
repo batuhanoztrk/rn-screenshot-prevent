@@ -11,10 +11,6 @@
 
 RCT_EXPORT_MODULE()
 
-- (NSArray<NSString *> *)supportedEvents {
-    return @[@"userDidTakeScreenshot"];
-}
-
 - (dispatch_queue_t)methodQueue
 {
     return dispatch_get_main_queue();
@@ -31,10 +27,6 @@ RCT_EXPORT_MODULE()
     // handle active event
     [center addObserver:self selector:@selector(handleAppStateActive)
                             name:UIApplicationDidBecomeActiveNotification
-                            object:nil];
-    // handle screenshot taken event
-    [center addObserver:self selector:@selector(handleAppScreenshotNotification)
-                            name:UIApplicationUserDidTakeScreenshotNotification
                             object:nil];
 
     hasListeners = TRUE;
@@ -78,14 +70,6 @@ RCT_EXPORT_MODULE()
                              self->obfuscatingView = nil;
                          }
          ];
-    }
-}
-
-/** sends screenshot taken event into app */
-- (void) handleAppScreenshotNotification {
-    // only send events when we have some listeners
-    if(hasListeners) {
-        [self sendEventWithName:@"userDidTakeScreenshot" body:nil];
     }
 }
 

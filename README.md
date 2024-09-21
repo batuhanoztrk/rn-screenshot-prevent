@@ -94,30 +94,6 @@ if(!__DEV__) RNPreventScreenshot.enableSecureView(imgUri);
  */
 if(!__DEV__) RNScreenshotPrevent.disableSecureView();
 
-/* (IOS) notification handler
- * notifies when user has taken screenshot (yes, after taking) - you can show alert or do some actions
- *
- * @param {function} callback fn
- * @returns object with .remove() method
- */
-addListener(fn);
-
-/** example using the listener */
-useEffect(() => {
-	const subscription = RNScreenshotPrevent.addListener(() => {
-		console.log('Screenshot taken');
-		showAlert({
-			title: 'Warning',
-			message: 'You have taken a screenshot of the app. This is prohibited due to security reasons.',
-			confirmText: 'I understand'
-		});
-	})
-
-	return () => {
-		subscription.remove();
-	}
-}, []);
-
 ```
 
 

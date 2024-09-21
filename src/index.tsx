@@ -1,9 +1,4 @@
-import {
-  type EmitterSubscription,
-  NativeEventEmitter,
-  NativeModules,
-  Platform,
-} from 'react-native';
+import { NativeModules, Platform } from 'react-native';
 import { useEffect } from 'react';
 
 const LINKING_ERROR =
@@ -34,13 +29,9 @@ interface IScreenshotPrevent {
   enabled(enabled: boolean): void;
   enableSecureView(imagePath?: string): void;
   disableSecureView(): void;
-  addListener(fn: () => void): EmitterSubscription;
 }
 
 class RNScreenshotPrevent implements IScreenshotPrevent {
-  private eventEmitter =
-    Platform.OS === 'ios' ? new NativeEventEmitter(ScreenshotPrevent) : null;
-
   enabled(enabled: boolean): void {
     ScreenshotPrevent.enabled(enabled);
   }
@@ -51,20 +42,6 @@ class RNScreenshotPrevent implements IScreenshotPrevent {
 
   disableSecureView(): void {
     ScreenshotPrevent.disableSecureView();
-  }
-
-  addListener(fn: () => void): EmitterSubscription {
-    if (Platform.OS === 'ios') {
-      if (typeof fn !== 'function') {
-        throw new Error(
-          'RNScreenshotPrevent: addListener requires valid callback function'
-        );
-      }
-
-      return this.eventEmitter!.addListener('userDidTakeScreenshot', fn);
-    } else {
-      throw new Error('RNScreenshotPrevent: addListener not work in android');
-    }
   }
 }
 

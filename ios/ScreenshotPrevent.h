@@ -3,15 +3,13 @@
 #import "RNScreenshotPreventSpec.h"
 #import "RCTBridgeModule.h"
 #import "RCTConvert.h"
-#import "RCTEventEmitter.h"
 
-@interface ScreenshotPrevent : RCTEventEmitter <NativeScreenshotPreventSpec>
+@interface ScreenshotPrevent : NSObject <NativeScreenshotPreventSpec>
 #else
 #import <React/RCTBridgeModule.h>
 #import <React/RCTConvert.h>
-#import <React/RCTEventEmitter.h>
 
-@interface ScreenshotPrevent : RCTEventEmitter <RCTBridgeModule>
+@interface ScreenshotPrevent : NSObject <RCTBridgeModule>
 #endif
 
 @end
