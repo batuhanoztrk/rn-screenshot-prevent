@@ -10,39 +10,60 @@
 
 ## Getting started
 
-`$ npm install rn-screenshot-prevent --save`
+Install the library using either Yarn:
 
-### Mostly automatic installation
+```
+yarn add rn-screenshot-prevent
+```
 
-### React-Native version 0.59.X and higher: on IOS you might use only `pod install` in your ios folder
+or npm:
 
-`$ react-native link rn-screenshot-prevent`
+```
+npm install --save rn-screenshot-prevent
+```
 
-### Manual installation
+## Link
 
+### React Native v0.60+
 
-#### iOS
+For iOS, use `cocoapods` to link the package.
 
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `rn-screenshot-prevent` and add `RNScreenshotPrevent.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNScreenshotPrevent.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
+run the following command:
 
-#### Android
+```
+$ npx pod-install
+```
 
-1. Open up `android/app/src/main/java/[...]/MainApplication.java`
-- Add `import com.killserver.screenshotprev.RNScreenshotPreventPackage;` to the imports at the top of the file
-- Add `new RNScreenshotPreventPackage()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-   ```
-   include ':rn-screenshot-prevent'
-   project(':rn-screenshot-prevent').projectDir = new File(rootProject.projectDir, 	'../node_modules/rn-screenshot-prevent/android')
-   ```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-   ```
-      implementation project(':rn-screenshot-prevent')
-   ```
+For android, the package will be linked automatically on build.
 
+<details>
+  <summary>For React Native version 0.59 or older</summary>
+
+### React Native <= 0.59
+
+run the following command to link the package:
+
+```
+$ react-native link rn-screenshot-prevent
+```
+
+For iOS, make sure you install the pod file.
+
+```
+cd ios && pod install && cd ..
+```
+
+or you could follow the instructions to [manually link the project](https://reactnative.dev/docs/linking-libraries-ios#manual-linking)
+
+## Upgrading to React Native 0.60+
+
+New React Native comes with `autolinking` feature, which automatically links Native Modules in your project. In order to get it to work, make sure you unlink `rn-screenshot-prevent` first:
+
+```
+$ react-native unlink rn-screenshot-prevent
+```
+
+</details>
 
 
 ## Usage
