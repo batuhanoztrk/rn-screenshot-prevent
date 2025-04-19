@@ -1,5 +1,17 @@
 # rn-screenshot-prevent
 
+> ⚠️ **DEPRECATED** ⚠️
+> 
+> This package is no longer maintained. Please use [react-native-capture-protection](https://github.com/wn-na/react-native-capture-protection) instead, which provides more features and better compatibility with modern React Native versions.
+>
+> Key advantages of react-native-capture-protection:
+> - Full support for iOS and Android
+> - Expo compatibility
+> - Android 14 support
+> - Event listeners for capture events
+> - Provider and Hooks support
+> - Active maintenance and updates
+
 ### This fork contains fully working blank screenshot on IOS13+ including screen recording
 ### This fork contains fully working image screenshot cover on IOS13+ including screen recording
 ### App layout is white / or black in dark theme

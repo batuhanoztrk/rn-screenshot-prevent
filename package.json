@@ -1,7 +1,8 @@
 {
   "name": "rn-screenshot-prevent",
   "version": "0.0.8",
-  "description": "A React Native package to block screenshots and screen recordings, providing protection for sensitive app content. Supports both Android and iOS platforms.",
+  "description": "[DEPRECATED] A React Native package to block screenshots and screen recordings. Please use react-native-capture-protection instead.",
+  "deprecated": "Package is no longer maintained. Please use react-native-capture-protection instead: https://github.com/wn-na/react-native-capture-protection",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/src/index.d.ts",
